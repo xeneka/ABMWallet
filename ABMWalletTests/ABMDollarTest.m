@@ -25,4 +25,12 @@
     
 }
 
+-(void) testHash{
+    
+    ABMDollar *dollar1 = [[ABMDollar alloc] initWithAmount:10];
+    ABMDollar *dollar2 = [[ABMDollar alloc] initWithAmount:10];
+    XCTAssertEqual([dollar1 hash], [dollar2 hash],@"Igualdad de hash");
+    
+}
+
 @end

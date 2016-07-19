@@ -36,5 +36,13 @@
     
 }
 
+-(void) testHash{
+    
+    ABMEuro *euro1 = [[ABMEuro alloc] initWithAmount:10];
+    ABMEuro *euro2 = [[ABMEuro alloc] initWithAmount:10];
+    XCTAssertEqual([euro1 hash], [euro2 hash],@"Igualdad de hash");
+    
+}
+
 
 @end

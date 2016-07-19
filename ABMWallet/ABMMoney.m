@@ -33,5 +33,10 @@
     return [self subclassResponsibility:_cmd];
 }
 
+-(NSString *) description{
+    
+    return [NSString stringWithFormat:@"<%@ %ld", [self class], [self amount]];
+}
+
 
 @end
