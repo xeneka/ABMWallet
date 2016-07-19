@@ -7,44 +7,21 @@
 //
 
 #import "ABMDollar.h"
-
-
-@interface ABMDollar()
-
-@property (nonatomic) NSInteger amount;
-
-@end
+#import "ABMMoney-Private.h"
 
 
 
 @implementation ABMDollar
 
--(id) initWithAmount:(NSInteger) amount{
-    
-    if ( self = [super init]){
-        self.amount = amount;
-    }
-    return self;
-}
+
 
 -(ABMDollar *) times:(NSInteger) times{
     
-    ABMDollar *Dollar = [[ABMDollar alloc] initWithAmount:self.amount * times];
+    ABMDollar *Dollar = [[ABMDollar alloc] initWithAmount:[self.amount integerValue] * times];
     return Dollar;
     
 }
 
-
-#pragma mark - Override Methods
-
--(bool) isEqual:(id)object{
-    return self.amount == [object amount];
-}
-
--(NSUInteger) hash{
-    
-    return (NSInteger ) [self amount];
-}
 
 
 @end

@@ -44,5 +44,16 @@
     
 }
 
+-(void) testAmountStorage{
+    ABMEuro *euro1 = [[ABMEuro alloc] initWithAmount:10];
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    
+    XCTAssertEqual([[euro1 performSelector:@selector(amount)] integerValue], 10,@"Test de Storage");
+#pragma clang pop
+    
+}
+
 
 @end

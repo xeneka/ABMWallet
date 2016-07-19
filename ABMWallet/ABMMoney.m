@@ -22,7 +22,7 @@
 -(id) initWithAmount:(NSInteger) amount{
     
     if (self =[super init]){
-        _amount = amount;
+        _amount = @(amount);
     }
     
     return self;
@@ -35,7 +35,17 @@
 
 -(NSString *) description{
     
-    return [NSString stringWithFormat:@"<%@ %ld", [self class], [self amount]];
+    return [NSString stringWithFormat:@"<%@ %ld>", [self class], [self amount]];
+}
+
+#pragma mark - Override Methods
+
+-(bool) isEqual:(id)object{
+    return self.amount == [object amount];
+}
+-(NSUInteger) hash{
+    
+    return (NSInteger ) [self amount];
 }
 
 

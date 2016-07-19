@@ -8,41 +8,23 @@
 
 #import "ABMEuro.h"
 
-@interface ABMEuro()
+#import "ABMMoney-Private.h"
 
-@property (nonatomic) NSInteger amount;
-
-@end
 
 
 @implementation ABMEuro
 
--(id) initWithAmount:(NSInteger) amount{
-    
-    if ( self = [super init]){
-        self.amount = amount;
-    }
-    return self;
-}
+
 
 -(ABMEuro *) times:(NSInteger) times{
     
-    ABMEuro *Euro = [[ABMEuro alloc] initWithAmount:self.amount * times];
+    ABMEuro *Euro = [[ABMEuro alloc] initWithAmount:[self.amount integerValue] * times];
     return Euro;
     
 }
 
 
-#pragma mark - Override Methods
 
--(bool) isEqual:(id)object{
-    return self.amount == [object amount];
-}
-
--(NSUInteger) hash{
-    
-    return (NSInteger ) [self amount];
-}
 
 
 @end
