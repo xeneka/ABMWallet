@@ -13,10 +13,6 @@
 		A99A57B81D378BDA007D8422 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99A57B61D378BDA007D8422 /* Main.storyboard */; };
 		A99A57BA1D378BDA007D8422 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99A57B91D378BDA007D8422 /* Assets.xcassets */; };
 		A99A57BD1D378BDA007D8422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99A57BB1D378BDA007D8422 /* LaunchScreen.storyboard */; };
-		A99A57D31D378C43007D8422 /* ABMEuroTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A99A57D21D378C43007D8422 /* ABMEuroTest.m */; };
-		A9A9B1EA1D38D43E0027FE68 /* ABMEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9B1E91D38D43E0027FE68 /* ABMEuro.m */; };
-		A9A9B1EC1D3CE1F30027FE68 /* ABMDollarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9B1EB1D3CE1F30027FE68 /* ABMDollarTest.m */; };
-		A9A9B1EF1D3CE4160027FE68 /* ABMDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9B1EE1D3CE4160027FE68 /* ABMDollar.m */; };
 		A9A9B1F21D3CE7280027FE68 /* ABMMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9B1F11D3CE7280027FE68 /* ABMMoney.m */; };
 		A9B7729D1D3E194F00AA5512 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7729C1D3E194F00AA5512 /* NSObject+GNUStepAddons.m */; };
 		A9B7729F1D3E242B00AA5512 /* ABMMonyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7729E1D3E242B00AA5512 /* ABMMonyTest.m */; };
@@ -45,18 +41,11 @@
 		A99A57BE1D378BDA007D8422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99A57C31D378BDA007D8422 /* ABMWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABMWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99A57C91D378BDA007D8422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A99A57D21D378C43007D8422 /* ABMEuroTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMEuroTest.m; sourceTree = "<group>"; };
-		A9A9B1E81D38D43E0027FE68 /* ABMEuro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMEuro.h; sourceTree = "<group>"; };
-		A9A9B1E91D38D43E0027FE68 /* ABMEuro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMEuro.m; sourceTree = "<group>"; };
-		A9A9B1EB1D3CE1F30027FE68 /* ABMDollarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMDollarTest.m; sourceTree = "<group>"; };
-		A9A9B1ED1D3CE4160027FE68 /* ABMDollar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMDollar.h; sourceTree = "<group>"; };
-		A9A9B1EE1D3CE4160027FE68 /* ABMDollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMDollar.m; sourceTree = "<group>"; };
 		A9A9B1F01D3CE7280027FE68 /* ABMMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMMoney.h; sourceTree = "<group>"; };
 		A9A9B1F11D3CE7280027FE68 /* ABMMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMMoney.m; sourceTree = "<group>"; };
 		A9B7729B1D3E194F00AA5512 /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
 		A9B7729C1D3E194F00AA5512 /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
 		A9B7729E1D3E242B00AA5512 /* ABMMonyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMMonyTest.m; sourceTree = "<group>"; };
-		A9B772A01D3E807100AA5512 /* ABMMoney-Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABMMoney-Private.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				A99A57C91D378BDA007D8422 /* Info.plist */,
-				A99A57D21D378C43007D8422 /* ABMEuroTest.m */,
-				A9A9B1EB1D3CE1F30027FE68 /* ABMDollarTest.m */,
 				A9B7729E1D3E242B00AA5512 /* ABMMonyTest.m */,
 			);
 			path = ABMWalletTests;
@@ -135,13 +122,8 @@
 		A9A9B1E61D38CF0D0027FE68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A9A9B1E81D38D43E0027FE68 /* ABMEuro.h */,
-				A9A9B1E91D38D43E0027FE68 /* ABMEuro.m */,
-				A9A9B1ED1D3CE4160027FE68 /* ABMDollar.h */,
-				A9A9B1EE1D3CE4160027FE68 /* ABMDollar.m */,
 				A9A9B1F01D3CE7280027FE68 /* ABMMoney.h */,
 				A9A9B1F11D3CE7280027FE68 /* ABMMoney.m */,
-				A9B772A01D3E807100AA5512 /* ABMMoney-Private.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -258,10 +240,8 @@
 				A99A57B51D378BDA007D8422 /* ViewController.m in Sources */,
 				A9A9B1F21D3CE7280027FE68 /* ABMMoney.m in Sources */,
 				A9B7729D1D3E194F00AA5512 /* NSObject+GNUStepAddons.m in Sources */,
-				A9A9B1EF1D3CE4160027FE68 /* ABMDollar.m in Sources */,
 				A99A57B21D378BDA007D8422 /* AppDelegate.m in Sources */,
 				A99A57AF1D378BDA007D8422 /* main.m in Sources */,
-				A9A9B1EA1D38D43E0027FE68 /* ABMEuro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9A9B1EC1D3CE1F30027FE68 /* ABMDollarTest.m in Sources */,
-				A99A57D31D378C43007D8422 /* ABMEuroTest.m in Sources */,
 				A9B7729F1D3E242B00AA5512 /* ABMMonyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

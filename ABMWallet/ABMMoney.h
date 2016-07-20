@@ -11,7 +11,9 @@
 
 @interface ABMMoney : NSObject
 
--(id) initWithAmount:(NSInteger) amount;
+@property (nonatomic, readonly) NSString * currency;
+
+-(id) initWithAmount:(NSInteger) amount currency:(NSString *) currency;
 -(id) times:(NSInteger) times;
 
 +(id) euroWithAmount:(NSUInteger) amount;

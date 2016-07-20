@@ -7,27 +7,33 @@
 //
 
 #import "ABMMoney.h"
-#import "NSObject+GNUStepAddons.h"
-#import "ABMDollar.h"
-#import "ABMEuro.h"
-#import "ABMMoney-Private.h"
 
+
+
+
+@interface ABMMoney()
+
+@property (nonatomic) NSNumber *amount;
+
+
+@end
 
 
 
 @implementation ABMMoney
 
--(id) initWithAmount:(NSInteger) amount{
+-(id) initWithAmount:(NSInteger) amount currency:(NSString *)currency{
     
     if (self =[super init]){
         _amount = @(amount);
+        _currency = currency;
     }
     
     return self;
 }
 -(id) times:(NSInteger) times{
     
-    ABMMoney *money = [[ABMMoney alloc] initWithAmount:[self.amount integerValue] * times];
+    ABMMoney *money = [[ABMMoney alloc] initWithAmount:[self.amount integerValue] * times currency:self.currency];
     return money;
 }
 
@@ -39,13 +45,13 @@
 
 +(id) euroWithAmount:(NSUInteger) amount{
     
-    ABMEuro *euro = [[ABMEuro alloc] initWithAmount:amount];
+    ABMMoney *euro = [[ABMMoney alloc] initWithAmount:amount currency:@"EUR"];
     return euro;
     
 }
 +(id) dollarWithAmount:(NSUInteger) amount{
     
-    ABMDollar *dollar = [[ABMDollar alloc] initWithAmount:amount];
+    ABMMoney *dollar = [[ABMMoney alloc] initWithAmount:amount currency:@"USD"];
     return dollar;
     
     
