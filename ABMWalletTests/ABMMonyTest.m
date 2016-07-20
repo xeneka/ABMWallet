@@ -44,7 +44,11 @@
     
     ABMMoney *euro1 = [ABMMoney euroWithAmount:10];
     ABMMoney *euro2 = [ABMMoney euroWithAmount:10];
+    ABMMoney *dollar = [ABMMoney dollarWithAmount:10];
     XCTAssertEqualObjects(euro1, euro2,@"Test de igualdad");
+    XCTAssertNotEqualObjects(euro1, dollar,@"Two diferent currency with same amount");
+    
+    
     
     
 }

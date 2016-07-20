@@ -62,7 +62,14 @@
 #pragma mark - Override Methods
 
 -(bool) isEqual:(id)object{
+    
+    if([[self currency] isEqual:[object currency]]){
+    
     return self.amount == [object amount];
+    }
+    
+    return false;
+    
 }
 -(NSUInteger) hash{
     
