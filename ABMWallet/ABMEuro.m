@@ -16,12 +16,7 @@
 
 
 
--(ABMEuro *) times:(NSInteger) times{
-    
-    ABMEuro *Euro = [[ABMEuro alloc] initWithAmount:[self.amount integerValue] * times];
-    return Euro;
-    
-}
+
 
 
 

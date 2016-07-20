@@ -8,13 +8,11 @@
 
 #import "ABMMoney.h"
 #import "NSObject+GNUStepAddons.h"
+#import "ABMDollar.h"
+#import "ABMEuro.h"
+#import "ABMMoney-Private.h"
 
-@interface ABMMoney()
-    
-@property (nonatomic) NSInteger amount;
-    
 
-@end
 
 
 @implementation ABMMoney
@@ -27,16 +25,33 @@
     
     return self;
 }
--(ABMMoney *) times:(NSInteger) times{
+-(id) times:(NSInteger) times{
     
-    
-    return [self subclassResponsibility:_cmd];
+    ABMMoney *money = [[ABMMoney alloc] initWithAmount:[self.amount integerValue] * times];
+    return money;
 }
 
 -(NSString *) description{
     
-    return [NSString stringWithFormat:@"<%@ %ld>", [self class], [self amount]];
+    return [NSString stringWithFormat:@"<%@ %@>", [self class], [self amount]];
 }
+
+
++(id) euroWithAmount:(NSUInteger) amount{
+    
+    ABMEuro *euro = [[ABMEuro alloc] initWithAmount:amount];
+    return euro;
+    
+}
++(id) dollarWithAmount:(NSUInteger) amount{
+    
+    ABMDollar *dollar = [[ABMDollar alloc] initWithAmount:amount];
+    return dollar;
+    
+    
+}
+
+
 
 #pragma mark - Override Methods
 

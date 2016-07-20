@@ -15,12 +15,7 @@
 
 
 
--(ABMDollar *) times:(NSInteger) times{
-    
-    ABMDollar *Dollar = [[ABMDollar alloc] initWithAmount:[self.amount integerValue] * times];
-    return Dollar;
-    
-}
+
 
 
 

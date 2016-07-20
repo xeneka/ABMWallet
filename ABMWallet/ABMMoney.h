@@ -12,7 +12,9 @@
 @interface ABMMoney : NSObject
 
 -(id) initWithAmount:(NSInteger) amount;
--(ABMMoney *) times:(NSInteger) times;
+-(id) times:(NSInteger) times;
 
++(id) euroWithAmount:(NSUInteger) amount;
++(id) dollarWithAmount:(NSUInteger) amount;
 
 @end

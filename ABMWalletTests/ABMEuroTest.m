@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "ABMEuro.h"
+#import "ABMMoney.h"
 
 
 @interface ABMEuroTest : XCTestCase
@@ -20,17 +21,17 @@
 
 -(void)testMultiplication {
     
-    ABMEuro *euro = [[ABMEuro alloc] initWithAmount:5];
+    ABMEuro *euro = [ABMMoney euroWithAmount:5];
     ABMEuro *five = [euro times:2];
-    ABMEuro *ten  = [[ABMEuro alloc] initWithAmount:10];
+    ABMEuro *ten  = [ABMMoney euroWithAmount:10];
     XCTAssertEqualObjects(five, ten,@"Test multiplier");
     
 }
 
 -(void)testEqulity{
     
-    ABMEuro *euro1 = [[ABMEuro alloc] initWithAmount:10];
-    ABMEuro *euro2 = [[ABMEuro alloc] initWithAmount:10];
+    ABMEuro *euro1 = [ABMMoney euroWithAmount:10];
+    ABMEuro *euro2 = [ABMMoney euroWithAmount:10];
     XCTAssertEqualObjects(euro1, euro2,@"Test de igualdad");
     
     
@@ -38,14 +39,14 @@
 
 -(void) testHash{
     
-    ABMEuro *euro1 = [[ABMEuro alloc] initWithAmount:10];
-    ABMEuro *euro2 = [[ABMEuro alloc] initWithAmount:10];
+    ABMEuro *euro1 = [ABMMoney euroWithAmount:10];
+    ABMEuro *euro2 = [ABMMoney euroWithAmount:10];
     XCTAssertEqual([euro1 hash], [euro2 hash],@"Igualdad de hash");
     
 }
 
 -(void) testAmountStorage{
-    ABMEuro *euro1 = [[ABMEuro alloc] initWithAmount:10];
+    ABMEuro *euro1 = [ABMMoney euroWithAmount:10];
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"

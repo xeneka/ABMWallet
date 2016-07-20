@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "ABMDollar.h"
+#import "ABMMoney.h"
 
 
 @interface ABMDollarTest : XCTestCase
@@ -18,8 +19,8 @@
 
 -(void)testMultiplier{
     
-    ABMDollar *dollar = [[ABMDollar alloc] initWithAmount:10];
-    ABMDollar *five = [[ABMDollar alloc] initWithAmount:5];
+    ABMDollar *dollar = [ABMMoney dollarWithAmount:10];
+    ABMDollar *five = [ABMMoney dollarWithAmount:5];
     ABMDollar *ten = [five times:2];
     XCTAssertEqualObjects(dollar, ten, @"Equality Test");
     XCTAssertFalse([ten isEqual:five],@"Non equivalen test");
@@ -28,14 +29,14 @@
 
 -(void) testHash{
     
-    ABMDollar *dollar1 = [[ABMDollar alloc] initWithAmount:10];
-    ABMDollar *dollar2 = [[ABMDollar alloc] initWithAmount:10];
+    ABMDollar *dollar1 = [ABMMoney dollarWithAmount:10];
+    ABMDollar *dollar2 = [ABMMoney dollarWithAmount:10];
     XCTAssertEqual([dollar1 hash], [dollar2 hash],@"Igualdad de hash");
     
 }
 
 -(void) testAmountStorage{
-    ABMDollar *dollar1 = [[ABMDollar alloc] initWithAmount:10];
+    ABMDollar *dollar1 = [ABMMoney dollarWithAmount:10];
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"

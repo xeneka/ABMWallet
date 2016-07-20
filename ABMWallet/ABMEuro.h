@@ -13,6 +13,4 @@
 @interface ABMEuro : ABMMoney
 
 
--(id) initWithAmount:(NSInteger) amount;
--(ABMEuro *) times:(NSInteger) times;
 @end

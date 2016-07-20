@@ -12,7 +12,7 @@
 
 @interface ABMDollar : ABMMoney
 
--(id) initWithAmount:(NSInteger) amount;
--(ABMDollar *) times:(NSInteger) times;
+
+
 
 @end
