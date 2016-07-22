@@ -36,7 +36,8 @@
     ABMWallet *wallet = [[ABMWallet alloc] initWithAmount:40 currency:@"EUR"] ;
     [wallet plus: [ABMMoney dollarWithAmount:20]];
     
-    ABMMoney *reduce = [broker reduce:wallet to:@"USD" ];
+    ABMMoney *reduce = [broker reduce:wallet to:@"USD"];
+    
     
     
     

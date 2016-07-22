@@ -7,6 +7,7 @@
 //
 
 #import "ABMMoney.h"
+#import "ABMBroker.h"
 
 
 
@@ -65,6 +66,26 @@
     return [[ABMMoney alloc] initWithAmount:totalAmount currency:self.currency];
 }
 
+
+
+-(id<ABMMoney>) reduceToCurrency:(NSString *) currency rate:(ABMBroker *) broker{
+    
+    ABMMoney *result;
+    double rate = [[broker.rates objectForKey:[broker keyforCurrency:self.currency toCurrency:currency]] doubleValue];
+    if([self.currency isEqualToString:currency]){
+        result = self;
+    }else if (rate == 0){
+        // No hay tasa de conversion lanzo excepcion
+        [NSException raise:@"NoConversionRateException" format:@"Must have a conversion form %@ to %@",self.currency, currency];
+    }else{
+        // Convertimos
+        double newAmount = [self.amount doubleValue] * rate;
+        result = [[ABMMoney alloc] initWithAmount:newAmount currency:currency];
+    }
+    
+    
+    return result;
+}
 
 
 #pragma mark - Override Methods

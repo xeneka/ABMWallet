@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABMMoney.h"
 
-@interface ABMWallet : NSObject
+
+@interface ABMWallet : NSObject<ABMMoney>
 
 @end

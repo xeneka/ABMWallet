@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 @class ABMMoney;
+@class ABMBroker;
 
 @protocol ABMMoney <NSObject>
 
 -(id) initWithAmount:(NSInteger) amount currency:(NSString *) currency;
 -(id<ABMMoney>) times:(NSInteger) times;
 -(id<ABMMoney>) plus:(ABMMoney *) other;
+-(id<ABMMoney>) reduceToCurrency:(NSString *) currency rate:(ABMBroker *) broker;
 
 @end
 

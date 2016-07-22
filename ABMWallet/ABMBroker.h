@@ -10,8 +10,11 @@
 #import "ABMMoney.h"
 @interface ABMBroker : NSObject
 
--(id<ABMMoney>) reduce:(ABMMoney *)money to:(NSString *)currency;
+@property (nonatomic , strong) NSMutableDictionary *rates;
+
+-(ABMMoney *) reduce:(id<ABMMoney>)money to:(NSString *)currency;
 
 -(void) addRate:(NSInteger) rate fromCurrency:(NSString *) fromCurrency toCurrency:(NSString *) toCurrency;
+-(NSString *) keyforCurrency:(NSString *) fromCurrency toCurrency:(NSString *) toCurrency;
 
 @end

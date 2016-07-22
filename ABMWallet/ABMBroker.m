@@ -9,9 +9,10 @@
 #import "ABMBroker.h"
 
 
+
 @interface ABMBroker()
     
-@property (nonatomic , strong) NSMutableDictionary *rates;
+
 
 @end
 
@@ -28,23 +29,9 @@
 }
 
 
--(id<ABMMoney>) reduce:(ABMMoney *)money to:(NSString *)currency{
+-(ABMMoney *) reduce:(id<ABMMoney>)money to:(NSString *)currency{
     
-    ABMMoney *result;
-    double rate = [[self.rates objectForKey:[self keyforCurrency:money.currency toCurrency:currency]] doubleValue];
-    if([money.currency isEqualToString:currency]){
-        result = money;
-    }else if (rate == 0){
-        // No hay tasa de conversion lanzo excepcion
-        [NSException raise:@"NoConversionRateException" format:@"Must have a conversion form %@ to %@",money.currency, currency];
-    }else{
-        // Convertimos
-        double newAmount = [money.amount doubleValue] * rate;
-        result = [[ABMMoney alloc] initWithAmount:newAmount currency:currency];
-    }
-    
-    
-    return result;
+    return [money reduceToCurrency:currency rate:self];
     
 }
 
