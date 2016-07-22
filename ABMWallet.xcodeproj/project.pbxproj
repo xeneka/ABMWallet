@@ -16,6 +16,10 @@
 		A9A9B1F21D3CE7280027FE68 /* ABMMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9B1F11D3CE7280027FE68 /* ABMMoney.m */; };
 		A9B7729D1D3E194F00AA5512 /* NSObject+GNUStepAddons.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7729C1D3E194F00AA5512 /* NSObject+GNUStepAddons.m */; };
 		A9B7729F1D3E242B00AA5512 /* ABMMonyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B7729E1D3E242B00AA5512 /* ABMMonyTest.m */; };
+		A9D388911D3FC40500702012 /* ABMBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D388901D3FC40500702012 /* ABMBrokerTest.m */; };
+		A9D388941D3FC50A00702012 /* ABMBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D388931D3FC50A00702012 /* ABMBroker.m */; };
+		A9FFC6651D4227D20015FAB4 /* ABMWalletTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC6641D4227D20015FAB4 /* ABMWalletTest.m */; };
+		A9FFC6681D422F2D0015FAB4 /* ABMWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC6671D422F2D0015FAB4 /* ABMWallet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,12 @@
 		A9B7729B1D3E194F00AA5512 /* NSObject+GNUStepAddons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GNUStepAddons.h"; sourceTree = "<group>"; };
 		A9B7729C1D3E194F00AA5512 /* NSObject+GNUStepAddons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GNUStepAddons.m"; sourceTree = "<group>"; };
 		A9B7729E1D3E242B00AA5512 /* ABMMonyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMMonyTest.m; sourceTree = "<group>"; };
+		A9D388901D3FC40500702012 /* ABMBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMBrokerTest.m; sourceTree = "<group>"; };
+		A9D388921D3FC50A00702012 /* ABMBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMBroker.h; sourceTree = "<group>"; };
+		A9D388931D3FC50A00702012 /* ABMBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMBroker.m; sourceTree = "<group>"; };
+		A9FFC6641D4227D20015FAB4 /* ABMWalletTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMWalletTest.m; sourceTree = "<group>"; };
+		A9FFC6661D422F2D0015FAB4 /* ABMWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMWallet.h; sourceTree = "<group>"; };
+		A9FFC6671D422F2D0015FAB4 /* ABMWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMWallet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,8 @@
 			children = (
 				A99A57C91D378BDA007D8422 /* Info.plist */,
 				A9B7729E1D3E242B00AA5512 /* ABMMonyTest.m */,
+				A9D388901D3FC40500702012 /* ABMBrokerTest.m */,
+				A9FFC6641D4227D20015FAB4 /* ABMWalletTest.m */,
 			);
 			path = ABMWalletTests;
 			sourceTree = "<group>";
@@ -124,6 +136,10 @@
 			children = (
 				A9A9B1F01D3CE7280027FE68 /* ABMMoney.h */,
 				A9A9B1F11D3CE7280027FE68 /* ABMMoney.m */,
+				A9D388921D3FC50A00702012 /* ABMBroker.h */,
+				A9D388931D3FC50A00702012 /* ABMBroker.m */,
+				A9FFC6661D422F2D0015FAB4 /* ABMWallet.h */,
+				A9FFC6671D422F2D0015FAB4 /* ABMWallet.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -237,9 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FFC6681D422F2D0015FAB4 /* ABMWallet.m in Sources */,
 				A99A57B51D378BDA007D8422 /* ViewController.m in Sources */,
 				A9A9B1F21D3CE7280027FE68 /* ABMMoney.m in Sources */,
 				A9B7729D1D3E194F00AA5512 /* NSObject+GNUStepAddons.m in Sources */,
+				A9D388941D3FC50A00702012 /* ABMBroker.m in Sources */,
 				A99A57B21D378BDA007D8422 /* AppDelegate.m in Sources */,
 				A99A57AF1D378BDA007D8422 /* main.m in Sources */,
 			);
@@ -249,7 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FFC6651D4227D20015FAB4 /* ABMWalletTest.m in Sources */,
 				A9B7729F1D3E242B00AA5512 /* ABMMonyTest.m in Sources */,
+				A9D388911D3FC40500702012 /* ABMBrokerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

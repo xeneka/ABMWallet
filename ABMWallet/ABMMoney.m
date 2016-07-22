@@ -13,7 +13,7 @@
 
 @interface ABMMoney()
 
-@property (nonatomic) NSNumber *amount;
+@property (nonatomic,strong) NSNumber *amount;
 
 
 @end
@@ -31,7 +31,7 @@
     
     return self;
 }
--(id) times:(NSInteger) times{
+-(id<ABMMoney>) times:(NSInteger) times{
     
     ABMMoney *money = [[ABMMoney alloc] initWithAmount:[self.amount integerValue] * times currency:self.currency];
     return money;
@@ -39,7 +39,7 @@
 
 -(NSString *) description{
     
-    return [NSString stringWithFormat:@"<%@ %@>", [self class], [self amount]];
+    return [NSString stringWithFormat:@"<%@: %@ %@>", [self class],self.currency,self.amount ];
 }
 
 
@@ -58,6 +58,14 @@
 }
 
 
+-(id<ABMMoney>) plus:(ABMMoney *) other{
+    
+    NSInteger totalAmount = [self.amount integerValue] + [other.amount integerValue];
+    
+    return [[ABMMoney alloc] initWithAmount:totalAmount currency:self.currency];
+}
+
+
 
 #pragma mark - Override Methods
 
@@ -73,7 +81,7 @@
 }
 -(NSUInteger) hash{
     
-    return (NSInteger ) [self amount];
+    return [self.amount integerValue];
 }
 
 

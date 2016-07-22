@@ -53,7 +53,7 @@
     
 }
 
--(void) testHash{
+-(void) testhashObject{
     
     ABMMoney *euro1 = [ABMMoney euroWithAmount:10];
     ABMMoney *euro2 = [ABMMoney euroWithAmount:10];
@@ -77,6 +77,32 @@
 #pragma clang pop
     
 }
+
+-(void) testSimpleAddition{
+    ABMMoney *a1 = [ABMMoney euroWithAmount:10];
+    ABMMoney *a2 = [ABMMoney euroWithAmount:15];
+    XCTAssertEqualObjects(a2, [a1 plus: [ABMMoney euroWithAmount:5]],@"Sum same money");
+    
+    
+}
+
+-(void) testHashStorage{
+    
+    ABMMoney *a1 = [ABMMoney dollarWithAmount:10];
+    
+    XCTAssertEqual(10, [a1 hash],@"Hash must be equal");
+    
+}
+
+-(void) testDescription{
+    
+    ABMMoney *a1 = [ABMMoney dollarWithAmount:10];
+    NSString *desc =@"<ABMMoney: USD 10>";
+    
+    XCTAssertEqualObjects([a1 description], desc, @"Descripcion Model");
+    
+}
+
 
 
 @end
