@@ -20,6 +20,8 @@
 		A9D388941D3FC50A00702012 /* ABMBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D388931D3FC50A00702012 /* ABMBroker.m */; };
 		A9FFC6651D4227D20015FAB4 /* ABMWalletTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC6641D4227D20015FAB4 /* ABMWalletTest.m */; };
 		A9FFC6681D422F2D0015FAB4 /* ABMWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC6671D422F2D0015FAB4 /* ABMWallet.m */; };
+		A9FFC66D1D4293CE0015FAB4 /* ABMWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC66C1D4293CE0015FAB4 /* ABMWalletTableViewController.m */; };
+		A9FFC66F1D42959C0015FAB4 /* ABMWalletTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFC66E1D42959C0015FAB4 /* ABMWalletTableViewControllerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		A9FFC6641D4227D20015FAB4 /* ABMWalletTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMWalletTest.m; sourceTree = "<group>"; };
 		A9FFC6661D422F2D0015FAB4 /* ABMWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMWallet.h; sourceTree = "<group>"; };
 		A9FFC6671D422F2D0015FAB4 /* ABMWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMWallet.m; sourceTree = "<group>"; };
+		A9FFC66B1D4293CE0015FAB4 /* ABMWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMWalletTableViewController.h; sourceTree = "<group>"; };
+		A9FFC66C1D4293CE0015FAB4 /* ABMWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMWalletTableViewController.m; sourceTree = "<group>"; };
+		A9FFC66E1D42959C0015FAB4 /* ABMWalletTableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMWalletTableViewControllerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A99A57AC1D378BDA007D8422 /* ABMWallet */,
+				A9FFC66A1D4293470015FAB4 /* ABMWalletControllerTest */,
 				A99A57C61D378BDA007D8422 /* ABMWalletTests */,
 				A99A57AB1D378BDA007D8422 /* Products */,
 			);
@@ -97,12 +103,11 @@
 		A99A57AC1D378BDA007D8422 /* ABMWallet */ = {
 			isa = PBXGroup;
 			children = (
+				A9FFC6691D4293160015FAB4 /* Controllers */,
 				A9B7729A1D3E174700AA5512 /* categories */,
 				A9A9B1E61D38CF0D0027FE68 /* Models */,
 				A99A57B01D378BDA007D8422 /* AppDelegate.h */,
 				A99A57B11D378BDA007D8422 /* AppDelegate.m */,
-				A99A57B31D378BDA007D8422 /* ViewController.h */,
-				A99A57B41D378BDA007D8422 /* ViewController.m */,
 				A99A57B61D378BDA007D8422 /* Main.storyboard */,
 				A99A57B91D378BDA007D8422 /* Assets.xcassets */,
 				A99A57BB1D378BDA007D8422 /* LaunchScreen.storyboard */,
@@ -151,6 +156,26 @@
 				A9B7729C1D3E194F00AA5512 /* NSObject+GNUStepAddons.m */,
 			);
 			name = categories;
+			sourceTree = "<group>";
+		};
+		A9FFC6691D4293160015FAB4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A99A57B31D378BDA007D8422 /* ViewController.h */,
+				A99A57B41D378BDA007D8422 /* ViewController.m */,
+				A9FFC66B1D4293CE0015FAB4 /* ABMWalletTableViewController.h */,
+				A9FFC66C1D4293CE0015FAB4 /* ABMWalletTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A9FFC66A1D4293470015FAB4 /* ABMWalletControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+				A9FFC66E1D42959C0015FAB4 /* ABMWalletTableViewControllerTest.m */,
+			);
+			name = ABMWalletControllerTest;
+			path = ABMWallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9FFC6681D422F2D0015FAB4 /* ABMWallet.m in Sources */,
+				A9FFC66D1D4293CE0015FAB4 /* ABMWalletTableViewController.m in Sources */,
 				A99A57B51D378BDA007D8422 /* ViewController.m in Sources */,
 				A9A9B1F21D3CE7280027FE68 /* ABMMoney.m in Sources */,
 				A9B7729D1D3E194F00AA5512 /* NSObject+GNUStepAddons.m in Sources */,
@@ -268,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9FFC6651D4227D20015FAB4 /* ABMWalletTest.m in Sources */,
+				A9FFC66F1D42959C0015FAB4 /* ABMWalletTableViewControllerTest.m in Sources */,
 				A9B7729F1D3E242B00AA5512 /* ABMMonyTest.m in Sources */,
 				A9D388911D3FC40500702012 /* ABMBrokerTest.m in Sources */,
 			);

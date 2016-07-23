@@ -12,4 +12,6 @@
 
 @interface ABMWallet : NSObject<ABMMoney>
 
+@property (nonatomic, readonly) NSInteger count;
+
 @end
