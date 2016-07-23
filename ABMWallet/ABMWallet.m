@@ -12,6 +12,7 @@
 @interface ABMWallet()
  
 @property (nonatomic, strong) NSMutableArray *moneys;
+@property (nonatomic, strong) NSMutableArray *currencies;
     
 
 @end
@@ -32,7 +33,9 @@
         
         ABMMoney *money =[[ABMMoney alloc] initWithAmount:amount currency:currency];
         _moneys = [NSMutableArray array];
+        _currencies = [NSMutableArray array];
         [_moneys addObject:money];
+        [_currencies addObject:currency];
         
     }
     
@@ -42,6 +45,15 @@
 -(id <ABMMoney>) plus:(ABMMoney *) money{
     
     [self.moneys addObject:money];
+    
+    NSInteger index = [self.currencies indexOfObject:money.currency];
+    
+   
+  if (NSNotFound == index){
+        [self.currencies addObject:money.currency];
+       
+    }
+    
     return self;
     
 }
@@ -73,6 +85,24 @@
     
 }
 
+-(NSUInteger) numOfBadget{
+    return self.currencies.count;
+}
 
+-(NSUInteger) numOfMoneybyBadget: (NSString *) currency{
+
+    NSInteger numOfMoney =0;
+    
+    for (ABMMoney *each in self.moneys) {
+        
+        if ([each.currency isEqualToString:currency]){
+            
+            numOfMoney +=1;
+            
+        }
+    }
+ 
+    return numOfMoney;
+}
 
 @end

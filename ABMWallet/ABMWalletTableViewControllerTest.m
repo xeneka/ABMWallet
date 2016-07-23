@@ -51,7 +51,9 @@
     
 }
 
-
+-(void) testSectionForTypeOfMoney{
+    
+}
 
 
 @end

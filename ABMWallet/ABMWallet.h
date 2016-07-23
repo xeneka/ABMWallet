@@ -12,6 +12,8 @@
 
 @interface ABMWallet : NSObject<ABMMoney>
 
-@property (nonatomic, readonly) NSInteger count;
+@property (nonatomic, readonly) NSUInteger count;
+-(NSUInteger) numOfBadget;
+-(NSUInteger) numOfMoneybyBadget: (NSString *) currency;
 
 @end
