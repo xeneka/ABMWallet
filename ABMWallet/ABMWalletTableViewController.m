@@ -176,7 +176,10 @@
             titleOfCell=[NSString stringWithFormat:@"Total de %@ %@",[self nameOfSection:section],[resumenRow.amount stringValue]];
             
         }else{
-            valor = [self.model moneyAtIndex:cellindex currency:[self nameOfSection:section]];
+            
+            NSArray *moneys = [self.model moneysForCurrency:[self nameOfSection:section]];
+            valor = moneys[cellindex];
+            
             titleOfCell = [valor.amount stringValue];
         }
         

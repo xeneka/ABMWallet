@@ -125,9 +125,9 @@
     
 }
 
--(ABMMoney *) moneyAtIndex:(NSUInteger) index currency:(NSString *) currency{
-    
-    
+
+
+-(NSArray *) moneysForCurrency:(NSString *) currency{
     NSMutableArray *arrayForMoney =[NSMutableArray array];
     
     for (ABMMoney *each in self.moneys) {
@@ -136,10 +136,9 @@
         }
     }
     
-    return arrayForMoney[index];
-    
-
-    
+    return arrayForMoney;
 }
+
+
 
 @end

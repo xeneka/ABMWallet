@@ -15,7 +15,8 @@
 @property (nonatomic, readonly) NSUInteger count;
 -(NSUInteger) numOfBadget;
 -(NSUInteger) numOfMoneybyBadget: (NSString *) currency;
--(ABMMoney *) moneyAtIndex:(NSUInteger) index currency:(NSString *) currency;
+
 -(NSString *) typeofBudget:(NSUInteger) index;
 -(ABMMoney *) resumeByBugdet: (NSString *) currency;
+-(NSArray *) moneysForCurrency:(NSString *) currency;
 @end
