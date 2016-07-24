@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ABMWallet.h"
+#import "ABMMoney.h"
+#import "ABMWalletTableViewController.h"
+#import "ABMBroker.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +22,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    ABMWallet *wallet = [[ABMWallet alloc] initWithAmount:30 currency:@"USD"];
+    [wallet plus:[ABMMoney euroWithAmount:10]];
+    [wallet plus:[ABMMoney euroWithAmount:30]];
+    [wallet plus:[ABMMoney dollarWithAmount:40]];
+    
+    ABMWalletTableViewController *walletVC = [[ABMWalletTableViewController alloc] initWithModel:wallet];
+    ABMBroker *broker = [[ABMBroker alloc] init];
+    [broker addRate:2 fromCurrency:@"EUR" toCurrency:@"USD"];
+    walletVC.broker = broker;
+    UINavigationController *unav = [[UINavigationController alloc] initWithRootViewController:walletVC];
+   self.window.rootViewController = unav;
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

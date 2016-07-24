@@ -8,11 +8,13 @@
 
 #import "ABMWalletTableViewController.h"
 #import "ABMWallet.h"
+#import "ABMBroker.h"
 
 
 @interface ABMWalletTableViewController ()
 
 @property (nonatomic, strong) ABMWallet * model;
+
 
 @end
 
@@ -48,23 +50,44 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return [self.model numOfBadget]+1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+   
+    return [self nameOfSection:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.model count] +1;
+     return [self.model numOfMoneybyBadget:[self nameOfSection:section]]+1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSString *cellid =@"cellid";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    
+    if (cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+    }
+    
+  
+    
+    //ABMMoney * valor = [self.model moneyAtIndex:indexPath.row];
+    
+  
+    
+    //cell.textLabel.text = [valor.amount stringValue];
+    
+    cell.textLabel.text =[self textOfCell:indexPath.row section:indexPath.section];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -108,6 +131,60 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
 */
+
+
+#pragma mark - Utils
+
+
+
+
+-(NSString *) nameOfSection:(NSInteger) section{
+    
+    NSString *titleOfSection=@"";
+    NSInteger maxNumberOfSection = [self.model numOfBadget];
+   
+    
+    if (maxNumberOfSection == section) {
+        titleOfSection = @"Total Wallet";
+    }else{
+        titleOfSection = [self.model typeofBudget:section];
+    }
+    
+    return titleOfSection;
+    
+}
+
+-(NSString *) textOfCell:(NSInteger) cellindex section:(NSInteger) section{
+    
+    NSString *titleOfCell=@"";
+    
+    ABMMoney *valor;
+     NSInteger maxNumberOfRowInSection = [self.model numOfMoneybyBadget:[self nameOfSection:section]];
+    
+    
+    if (section == [self.model numOfBadget]){
+        valor = [self.model reduceToCurrency:@"EUR" rate:self.broker];
+        titleOfCell = [valor.amount stringValue];
+    }else{
+        
+        if(cellindex == maxNumberOfRowInSection){
+            
+            ABMMoney *resumenRow = [self.model resumeByBugdet:[self nameOfSection:section]];
+            
+            titleOfCell=[NSString stringWithFormat:@"Total de %@ %@",[self nameOfSection:section],[resumenRow.amount stringValue]];
+            
+        }else{
+            valor = [self.model moneyAtIndex:cellindex currency:[self nameOfSection:section]];
+            titleOfCell = [valor.amount stringValue];
+        }
+        
+        
+    }
+    return titleOfCell;
+    
+}
+
 
 @end

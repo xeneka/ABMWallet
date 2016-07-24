@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class ABMWallet;
+@class ABMBroker;
 
 @interface ABMWalletTableViewController : UITableViewController
 
-
-
+@property (nonatomic, strong) ABMBroker *broker;
 -(id) initWithModel:(ABMWallet *) model;
+
 
 @end

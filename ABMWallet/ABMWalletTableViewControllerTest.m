@@ -24,7 +24,7 @@
     [super setUp];
     
     self.wallet = [[ABMWallet alloc] initWithAmount:1 currency:@"USD"];
-    [self.wallet plus:[ABMMoney euroWithAmount:1]];
+    [self.wallet plus:[ABMMoney euroWithAmount:2]];
     self.walletVC = [[ABMWalletTableViewController alloc] initWithModel:self.wallet];
 
     

@@ -89,6 +89,10 @@
     return self.currencies.count;
 }
 
+-(NSString *) typeofBudget:(NSUInteger) index{
+    return [self.currencies objectAtIndex:index];
+}
+
 -(NSUInteger) numOfMoneybyBadget: (NSString *) currency{
 
     NSInteger numOfMoney =0;
@@ -103,6 +107,39 @@
     }
  
     return numOfMoney;
+}
+
+-(ABMMoney *) resumeByBugdet: (NSString *) currency{
+    
+    ABMMoney *resumeMoney = [[ABMMoney alloc] initWithAmount:0 currency:currency];
+    
+    for (ABMMoney *each in self.moneys) {
+        if ([each.currency isEqualToString:currency]){
+            resumeMoney = [resumeMoney plus:each];
+        }
+    }
+    
+    
+    
+    return resumeMoney;
+    
+}
+
+-(ABMMoney *) moneyAtIndex:(NSUInteger) index currency:(NSString *) currency{
+    
+    
+    NSMutableArray *arrayForMoney =[NSMutableArray array];
+    
+    for (ABMMoney *each in self.moneys) {
+        if ([each.currency isEqualToString:currency]){
+            [arrayForMoney addObject:each];
+        }
+    }
+    
+    return arrayForMoney[index];
+    
+
+    
 }
 
 @end
